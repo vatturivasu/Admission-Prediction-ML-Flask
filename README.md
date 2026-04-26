@@ -92,7 +92,7 @@ http://127.0.0.1:5000/
 
 ## Live Demo
 
-https://admission-prediction-production-5c8d.up.railway.app
+(https://studentsadmissionprediction.streamlit.app/)
 
 ## Deployment Details
 
