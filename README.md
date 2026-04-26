@@ -1,4 +1,4 @@
-##Admission Prediction System
+Admission Prediction System
 
 Project Overview
 
