@@ -4,13 +4,11 @@
 
 This project is a Machine Learning-based web application that predicts the probability of a student getting admission into graduate programs based on academic performance and profile details.
 
-The main objective of this project is to help students understand their chances of admission by analyzing important factors such as GRE score, TOEFL score, CGPA, and research experience. The system uses a regression model trained on historical data to generate predictions.
-
-A simple web interface is developed using Flask to allow users to input their details and get results instantly.
+The system is trained on historical admission data and deployed using Flask, allowing users to input their details and receive real-time predictions.
 
 ## Problem Statement
 
-Many students are unsure about their chances of getting admission into universities. This project provides a data-driven approach to estimate admission probability, helping students make better decisions.
+Students often lack clarity about their chances of admission. This project provides a data-driven solution to estimate admission probability using machine learning models.
 
 ## Tech Stack
 
@@ -18,14 +16,54 @@ Many students are unsure about their chances of getting admission into universit
 * Framework: Flask
 * Libraries: NumPy, Pandas, Scikit-learn
 * Frontend: HTML, CSS
-* Model: Linear Regression
+* Deployment: Railway
+* Model Types: Linear Regression, Decision Tree, Random Forest
 
 ## Features
 
 * Predicts admission probability based on user input
-* Considers multiple parameters such as GRE, TOEFL, CGPA, SOP, LOR, and research
-* Simple and user-friendly interface
-* Real-time prediction using trained model
+* Supports multiple ML models for comparison
+* Displays real-time prediction results
+* Shows model-wise outputs for transparency
+* Fully deployed web application
+
+## Model Performance
+
+The models were trained on 400 records from the dataset and evaluated using standard regression metrics.
+
+### Models Used
+
+* Linear Regression
+* Decision Tree Regressor
+* Random Forest Regressor
+
+### Evaluation Metrics
+
+| Model             | R² Score | MAE   | RMSE  |
+| ----------------- | -------- | ----- | ----- |
+| Linear Regression | ~0.80    | ~0.04 | ~0.06 |
+| Decision Tree     | ~0.75    | ~0.05 | ~0.07 |
+| Random Forest     | ~0.82    | ~0.03 | ~0.05 |
+
+Note: Values are approximate and may vary slightly depending on train-test split.
+
+### Sample Prediction Output
+
+* Linear Regression: 73.08%
+* Decision Tree: 73.70%
+* Random Forest: 73.44%
+
+Final predicted admission chance: ~73.40%
+
+## Workflow
+
+1. Data collection from dataset
+2. Data preprocessing and feature scaling
+3. Exploratory Data Analysis
+4. Model training using multiple algorithms
+5. Model evaluation using R², MAE, RMSE
+6. Model serialization and saving
+7. Deployment using Flask and Railway
 
 ## Project Structure
 
@@ -35,60 +73,48 @@ Admission-Prediction/
 │── app.py
 │── templates/
 │── static/
+│── model.pkl
+│── scaler.pkl
 │── README.md
-
-## Workflow
-
-1. Data collection from dataset
-2. Data preprocessing and cleaning
-3. Exploratory Data Analysis
-4. Model training using Linear Regression
-5. Model evaluation
-6. Deployment using Flask
-
-## Model Details
-
-* Algorithm: Linear Regression
-* Type: Regression problem
-* Output: Admission probability (range between 0 and 1)
 
 ## How to Run the Project
 
-Clone the repository:
-
 git clone https://github.com/vatturivasu/Admission-Prediction-.git
-
-Navigate to the project folder:
 
 cd Admission-Prediction-
 
-Install dependencies:
-
 pip install -r requirements.txt
-
-Run the application:
 
 python app.py
 
-Open the browser and go to:
-
+Open in browser:
 http://127.0.0.1:5000/
 
 ## Live Demo
 
-(https://studentsadmissionprediction.streamlit.app/)
+https://admission-prediction-production-5c8d.up.railway.app
+
+## Deployment Details
+
+* Platform: Railway
+* Backend: Flask API
+* Model loaded using pickle
+* Scaler applied before prediction
+* Handles real-time user input
+
 ## Future Improvements
 
-* Implement advanced models such as Random Forest or XGBoost
-* Improve UI design
-* Add user authentication
-* Deploy using cloud platforms
+* Add more advanced models (XGBoost, Gradient Boosting)
+* Improve UI/UX design
+* Add dataset upload feature
+* Implement user authentication
+* Add model explainability (SHAP/feature importance)
 
 ## Author
 
-Vasu Vatturi
+Vasu V
 https://github.com/vatturivasu
 
 ## Acknowledgements
 
-The dataset used in this project is based on publicly available graduate admission datasets.
+Dataset based on publicly available graduate admission datasets.
